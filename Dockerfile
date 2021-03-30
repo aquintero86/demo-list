@@ -5,7 +5,6 @@ RUN apk add --no-cache --virtual .build-deps g++ python3-dev libffi-dev openssl-
 RUN mkdir /app
 WORKDIR /app
 ENV FLASK_APP=app.py
-ENV FLASK_RUN_HOST=0.0.0.0
 COPY requirements.txt /app/requirements.txt
 RUN pip install databases
 RUN pip install SQLAlchemy
