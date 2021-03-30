@@ -6,7 +6,7 @@ from rq import Queue
 from rq.job import Job
 
 listen = ['default']
-redis_url = os.getenv('REDISTOGO_URL', 'redis://localhost:6379')
+redis_url = os.getenv('REDISTOGO_URL', 'redis://redis:6379')
 conn = redis.from_url(redis_url)
 
 #query redis by job_id if not exist the value return None
