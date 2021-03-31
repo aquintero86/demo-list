@@ -8,12 +8,11 @@ from rq import Queue
 from redis_conn import conn, get_results
 from flask_expects_json import expects_json
 import time
-import requests_cache
+
 
 app = Flask(__name__)      
 queue  = Queue(connection=conn) 
 #cache control
-requests_cache.install_cache('cache', backend='sqlite', expire_after=180)
 
 
 schema = {
@@ -58,4 +57,4 @@ def teardown_appcontext(response_or_exc):
 
 if __name__ == '__main__': 
     init_db()
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0',  port=5000)

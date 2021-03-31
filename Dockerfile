@@ -6,9 +6,9 @@ RUN mkdir /app
 WORKDIR /app
 ENV FLASK_APP=app.py
 COPY requirements.txt /app/requirements.txt
+ENV FLASK_RUN_HOST=0.0.0.0
 RUN pip install databases
 RUN pip install SQLAlchemy
-RUN pip install requests-cache
 RUN pip install -r requirements.txt
 EXPOSE 5000
 COPY . /app

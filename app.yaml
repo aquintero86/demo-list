@@ -1,0 +1,11 @@
+runtime: python37
+
+
+handlers:
+- url: /.*
+  script: auto
+
+env_variables:
+  # Storage ENV
+  DEFAULT_BUCKET: "avid-compound-309302.appspot.com"
+  PUBLIC_URI: 'https://storage.googleapis.com'
